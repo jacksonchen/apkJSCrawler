@@ -1,5 +1,5 @@
 {
-  "name": "droid-drawler-crawler",
+  "name": "apkJSCrawler",
   "version": "0.0.0",
   "description": "crawler crawling ndroid drawer",
   "main": "index.js",

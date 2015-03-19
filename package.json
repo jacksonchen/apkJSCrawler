@@ -1,0 +1,19 @@
+{
+  "name": "droid-drawler-crawler",
+  "version": "0.0.0",
+  "description": "crawler crawling ndroid drawer",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Jackson Chen",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "lodash": "^3.5.0",
+    "string": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}

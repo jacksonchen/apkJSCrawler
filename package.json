@@ -6,14 +6,19 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "apkJSCrawler": "./bin/apkJSCrawler.js"
+  },
   "author": "Jackson Chen",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.18.0",
+    "commander": "^2.7.1",
     "lodash": "^3.5.0",
     "string": "^3.0.0"
   },
   "devDependencies": {
+    "chai": "^2.1.2",
     "mocha": "^2.1.0"
   }
 }

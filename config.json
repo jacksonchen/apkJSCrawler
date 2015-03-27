@@ -1,0 +1,6 @@
+{
+  "config" : {
+    "aapt": "aapt",
+    "dbCollectionName": "apk"
+  }
+}

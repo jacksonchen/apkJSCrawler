@@ -33,8 +33,8 @@ program
         " store the apks. Default name is " + collectionName,
         setCollection);
 program
-    .command("download <keyword>")
-    .description("Download apps by the given keyword.")
+    .command("keyword <keyword> <output-dir>")
+    .description("Download apps by the given keyword(s).")
     .action(function(keyword) {
         crawler.download(keyword, function(result, error) {
         if(result)
@@ -43,10 +43,10 @@ program
     });
 
 program
-    .command("find <keyword>")
-    .description("Find the URL for apps by the given keyword.")
+    .command("file <keyword-file> <output-dir>")
+    .description("Download apps by the given keyword CSV file.")
     .action(function(keyword) {
-        crawler.find(keyword, function(error, result) {})
+        crawler.init(keyword);
     });
 
 program.parse(process.argv);

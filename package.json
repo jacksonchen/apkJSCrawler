@@ -15,6 +15,8 @@
     "cheerio": "^0.18.0",
     "commander": "^2.7.1",
     "lodash": "^3.5.0",
+    "nightmare": "^1.8.0",
+    "request": "^2.54.0",
     "string": "^3.0.0"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 {
   "config" : {
     "aapt": "aapt",
-    "dbCollectionName": "apk"
+    "dbCollectionName": "apk",
+    "database" : "apkdb"
   }
 }

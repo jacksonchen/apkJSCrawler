@@ -3,5 +3,7 @@
 ### MongoDB Collection Field Abbreviations
 
 name = n
+<br>
 version code = vc
+<br>
 path = p

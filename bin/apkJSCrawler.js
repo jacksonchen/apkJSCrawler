@@ -34,19 +34,16 @@ program
         setCollection);
 program
     .command("keyword <keyword> <output-dir>")
-    .description("Download apps by the given keyword(s).")
+    .description("Download apps by the given keyword.")
     .action(function(keyword) {
-        crawler.download(keyword, function(result, error) {
-        if(result)
-        	console.log(result)
-        });
+        crawler.init(keyword, "keyword");
     });
 
 program
     .command("file <keyword-file> <output-dir>")
     .description("Download apps by the given keyword CSV file.")
     .action(function(keyword) {
-        crawler.init(keyword);
+        crawler.init(keyword, "file");
     });
 
 program.parse(process.argv);

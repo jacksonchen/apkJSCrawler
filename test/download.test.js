@@ -1,5 +1,5 @@
-var expect = require('chai').expect,
-    assert = require('chai').assert,
+var chai = require('chai'),
+    assert = chai.assert,
     cheerio = require('cheerio'),
     fs = require('fs'),
     exec = require('child_process').exec,
@@ -9,8 +9,10 @@ var expect = require('chai').expect,
     filePath = __dirname + "/apks",
     url = "http://www.androiddrawer.com/24639/download-evernote-app-apk/";
 
+chai.Should();
+
 function readAapt(callback) {
-  fs.readFile('../config.json', function(err, data) {
+  fs.readFile(__dirname + '/../config.json', function(err, data) {
     if (err) throw err;
     var configData = JSON.parse(data).config,
         aapt = configData.aapt;
@@ -31,7 +33,7 @@ describe('Download HTML and APK', function () {
   it('downloads the HTML page for ', function (done) {
     download.getHTML(url, filePath, function(body, title, htmlPath) {
       $ = cheerio.load(body);
-      expect($('h3.section-title')[3]).to.exist;
+      $('h3.section-title')[3].should.exist;
       done();
     });
   });
@@ -45,7 +47,7 @@ describe('Download HTML and APK', function () {
 
   it('checks if HTML directory path is valid', function (done) {
     download.getHTML(url, filePath, function(body, title, htmlPath) {
-      expect(htmlPath).to.match(directoryMatch);
+      htmlPath.should.match(directoryMatch);
       done();
     });
   });
@@ -57,19 +59,19 @@ describe('Download HTML and APK', function () {
       readAapt(function(aapt) {
         COMMAND =  aapt + " dump badging " + dest;
         exec(COMMAND, function(error, stdout, stderr) {
-          expect(stderr).to.be.empty;
+          stderr.should.be.empty;
           done();
         });
       })
     });
   });
 
-  // after(function(done) {
-  //   deleteCOMMAND = "rm -rf " + filePath;
-  //   exec(deleteCOMMAND, function(error, stdout, stderr) {
-  //     if (stderr) return console.log(stderr);
-  //   });
-  //   done();
-  // });
+  after(function(done) {
+    deleteCOMMAND = "rm -rf " + filePath;
+    exec(deleteCOMMAND, function(error, stdout, stderr) {
+      if (stderr) return console.log(stderr);
+      done();
+    });
+  });
 
 })

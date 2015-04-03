@@ -19,15 +19,14 @@ A program using node.js to scrape data and crawl various websites hosting Androi
     -b, --db_name <arg>      The name of MongoDB database to store the apks . Default name is apksDB
     -p, --port_number <arg>  The port number that the mongod instance is listening. Default number is 27017
     -c, --collection <arg>   The name of MongoDB database collection to store the apks. Default name is apks
-    
+
 ## Configuration File
 
 Configuration paramaters in config.json:
 
 ```
-aapt: Directory to the aapt tool
 dbCollectionName: Collection title to store APK info
-database: Database name 
+database: Database name
 ```
 
 ## MongoDB Collection Field Abbreviations

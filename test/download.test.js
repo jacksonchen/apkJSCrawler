@@ -11,15 +11,6 @@ var chai = require('chai'),
 
 chai.Should();
 
-function readAapt(callback) {
-  fs.readFile(__dirname + '/../config.json', function(err, data) {
-    if (err) throw err;
-    var configData = JSON.parse(data).config,
-        aapt = configData.aapt;
-    callback(aapt);
-  });
-}
-
 describe('Download HTML and APK', function () {
 
   before(function(done) {
@@ -31,6 +22,7 @@ describe('Download HTML and APK', function () {
   });
 
   it('downloads the HTML page for ', function (done) {
+    this.timeout(20000);
     download.getHTML(url, filePath, function(body, title, htmlPath) {
       $ = cheerio.load(body);
       $('h3.section-title')[3].should.exist;
@@ -39,6 +31,7 @@ describe('Download HTML and APK', function () {
   });
 
   it('temporary app title is filename safe', function (done) {
+    this.timeout(20000);
     download.getHTML(url, filePath, function(body, title, htmlPath) {
       assert.notMatch(title, titleMatch);
       done();
@@ -46,6 +39,7 @@ describe('Download HTML and APK', function () {
   });
 
   it('checks if HTML directory path is valid', function (done) {
+    this.timeout(20000);
     download.getHTML(url, filePath, function(body, title, htmlPath) {
       htmlPath.should.match(directoryMatch);
       done();
@@ -54,15 +48,13 @@ describe('Download HTML and APK', function () {
 
   it('checks if apk has been properly downloaded', function (done) {
     url = "http://www.androiddrawer.com/download2/uc?export=download&confirm=no_antivirus&id=0B8muzPZAeiQ6VGVlVnJhbWpOV3M";
-    this.timeout(20000);
+    this.timeout(70000);
     download.downloadAPK(url, "Evernote", 1, filePath, function(dest) {
-      readAapt(function(aapt) {
-        COMMAND =  aapt + " dump badging " + dest;
-        exec(COMMAND, function(error, stdout, stderr) {
-          stderr.should.be.empty;
-          done();
-        });
-      })
+      COMMAND =  __dirname + '/../bin/aapt ' + " dump badging " + dest;
+      exec(COMMAND, function(error, stdout, stderr) {
+        stderr.should.be.empty;
+        done();
+      });
     });
   });
 

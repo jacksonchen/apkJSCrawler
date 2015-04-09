@@ -46,18 +46,6 @@ describe('Download HTML and APK', function () {
     });
   });
 
-  it('checks if apk has been properly downloaded', function (done) {
-    url = "http://www.androiddrawer.com/download2/uc?export=download&confirm=no_antivirus&id=0B8muzPZAeiQ6VGVlVnJhbWpOV3M";
-    this.timeout(70000);
-    download.downloadAPK(url, "Evernote", 1, filePath, function(dest) {
-      COMMAND =  __dirname + '/../bin/aapt ' + " dump badging " + dest;
-      exec(COMMAND, function(error, stdout, stderr) {
-        stderr.should.be.empty;
-        done();
-      });
-    });
-  });
-
   after(function(done) {
     deleteCOMMAND = "rm -rf " + filePath;
     exec(deleteCOMMAND, function(error, stdout, stderr) {

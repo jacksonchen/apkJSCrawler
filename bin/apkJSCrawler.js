@@ -45,14 +45,16 @@ program
     .command("keyword <keyword> <output_dir>")
     .description("Download apps by the given keyword.")
     .action(function(keyword, output_dir) {
-        crawler.readKeyword(keyword, output_dir, pluginName);
+        var dbArray = [hostName, portNumber, dbName, collectionName]
+        crawler.readKeyword(keyword, output_dir, pluginName, dbArray);
     });
 
 program
     .command("file <keyword-file> <output_dir>")
     .description("Download apps by the given keyword CSV file.")
     .action(function(keyword, output_dir) {
-        crawler.readKeywordFile(keyword, output_dir, pluginName);
+        var dbArray = [hostName, portNumber, dbName, collectionName]
+        crawler.readKeywordFile(keyword, output_dir, pluginName, dbArray);
     });
 
 program.parse(process.argv);

@@ -33,7 +33,7 @@ program
         " Default host is " + hostName, setHost)
     .option('-b, --db_name <arg>', "The name of MongoDB database to store the apks" +
         " . Default name is " + dbName, setDB)
-    .option('-p, --plugin <arg>', "The path to the plugin for a specific service" +
+    .option('-p, --plugin <path>', "The path to the plugin for a specific service" +
         " to download APKs from", setPlugin)
     .option('-p, --port_number <arg>', "The port number that the mongod instance is" +
         " listening. Default number is " + portNumber, setPort)

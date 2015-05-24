@@ -4,7 +4,7 @@ A program using node.js to scrape data and crawl various websites hosting Androi
 
 ## Usage
 
-`apkJSCrawler [options] [command]`
+`apkJSCrawler <options> <command>`
 
 
   Commands:
@@ -17,6 +17,7 @@ A program using node.js to scrape data and crawl various websites hosting Androi
     -V, --version            output the version number
     -H, --host_name <arg>    The host name that the mongod is connected to. Default host is localhost
     -b, --db_name <arg>      The name of MongoDB database to store the apks . Default name is apksDB
+    -p, --plugin <path>       The path to the plugin for a specific service to download APKs from
     -p, --port_number <arg>  The port number that the mongod instance is listening. Default number is 27017
     -c, --collection <arg>   The name of MongoDB database collection to store the apks. Default name is apks
 

@@ -25,6 +25,8 @@ A program using node.js to scrape data and crawl various websites hosting Androi
 
 This tool is developed and released here for academic purposes only, and I am not responsible for any damage that could be done with it. Use it at your own risk.
 
+This project uses the [MIT License](https://github.com/jacksonchen/apkJSCrawler/blob/master/LICENSE.md).
+
 ## MongoDB Collection Field Abbreviations
 
 name = n

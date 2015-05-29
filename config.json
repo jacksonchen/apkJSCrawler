@@ -1,6 +1,0 @@
-{
-  "config" : {
-    "dbCollectionName": "apk",
-    "database" : "apkdb"
-  }
-}

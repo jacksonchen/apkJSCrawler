@@ -1,0 +1,12 @@
+{
+  "dbConfig" : {
+    "host" : "localhost",
+    "port" : "27017",
+    "db" : "apksDB",
+    "collection" : "apks"
+  },
+  "plugin" : {
+    "GooglePlayCrawlerPath" : "/Users/Jackson/dev/google-play-crawler/googleplay"
+  }
+
+}

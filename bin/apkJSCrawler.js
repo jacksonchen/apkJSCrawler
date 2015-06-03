@@ -35,7 +35,7 @@ program
         " . Default name is " + dbName, setDB)
     .option('-p, --plugin <path>', "The path to the plugin for a specific service" +
         " to download APKs from", setPlugin)
-    .option('-p, --port_number <arg>', "The port number that the mongod instance is" +
+    .option('-n, --port_number <arg>', "The port number that the mongod instance is" +
         " listening. Default number is " + portNumber, setPort)
     .option('-c, --collection <arg>', "The name of MongoDB database collection to" +
         " store the apks. Default name is " + collectionName,

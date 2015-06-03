@@ -4,7 +4,7 @@ A program using node.js to scrape data and crawl various websites hosting Androi
 
 ## Usage
 
-`apkJSCrawler <options> <command>`
+`apkJSCrawler <command>`
 
 
   Commands:

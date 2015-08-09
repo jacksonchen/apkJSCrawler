@@ -12,14 +12,14 @@ program
     .command("keyword <keyword> <output_dir> <plugin_path>")
     .description("Download apps by the given keyword.")
     .action(function(keyword, output_dir, plugin_path) {
-        crawler.readKeyword(keyword, output_dir, plugin_path);
+        crawler.readKeyword(keyword, output_dir, plugin_path, "keyword");
     });
 
 program
     .command("file <keyword-file> <output_dir> <plugin_path>")
     .description("Download apps by the given keyword CSV file.")
     .action(function(keyword, output_dir, plugin_path) {
-        crawler.readKeywordFile(keyword, output_dir, plugin_path);
+        crawler.readKeywordFile(keyword, output_dir, plugin_path, "file");
     });
 
 program.parse(process.argv);

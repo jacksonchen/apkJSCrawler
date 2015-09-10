@@ -6,6 +6,7 @@
     "collection" : "apks"
   },
   "aapt" : "aapt",
+  "scraper": "playlistingscraper",
 
   "plugin" : {
     "GooglePlayCrawlerPath" : "/Users/Jackson/dev/google-play-crawler/googleplay"

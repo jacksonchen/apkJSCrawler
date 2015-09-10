@@ -4,7 +4,8 @@
   "description": "Crawler crawling for Android APKs",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node bin/apkJSCrawler.js"
   },
   "bin": {
     "apkJSCrawler": "./bin/apkJSCrawler.js"

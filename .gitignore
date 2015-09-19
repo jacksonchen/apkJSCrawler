@@ -10,3 +10,4 @@ config/
 *.log
 *.sh
 config/
+*.out

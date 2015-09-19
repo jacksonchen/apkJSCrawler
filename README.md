@@ -34,6 +34,14 @@ This project uses the [MIT License](https://github.com/jacksonchen/apkJSCrawler/
 
 name = n
 <br>
-version code = vc
+version code = verc
 <br>
-path = p
+version name = vern
+<br>
+path = path
+<br>
+saved date = d
+<br>
+app version id = id
+<br>
+apk file size = size

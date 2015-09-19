@@ -8,4 +8,5 @@ packages.csv
 *.apk
 config/
 *.log
+*.sh
 config/
